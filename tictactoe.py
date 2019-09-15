@@ -8,7 +8,7 @@ def display_board(board):
 def player_input():
   marker=''
   while marker!='X' and marker!='O':
-    marker=input("Newton please choose 'X' or 'O':").upper()
+    marker=input("Player 1 please choose 'X' or 'O':").upper()
     if marker=='X':
       return ('X','O')
     else:
@@ -24,9 +24,9 @@ def win_check(board,mark):
 def choose_first():  
   flip=random.randint(0,1)
   if flip==0:
-    return 'Newton'
+    return 'Player 1'
   else:
-    return 'Krishna'
+    return 'Player 2'
 def space_check(board,position):
   return board[position]==''
 def full_board_check(board):
@@ -55,7 +55,7 @@ while True:
     game_on=False
   while game_on:
     if turn == 'Player 1':
-      display_board(the_board) #its going to display the fucking board
+      display_board(the_board) #its going to display the board
       position=player_choice(the_board) #player has to choose the position 
       place_marker(the_board,player1_marker,position)
       if win_check(the_board,player1_marker):
@@ -70,7 +70,7 @@ while True:
         else:
           turn = 'Player 2'
     else:
-      display_board(the_board) #its going to display the fucking board
+      display_board(the_board) #its going to display the board
       position=player_choice(the_board) #player has to choose the position 
       place_marker(the_board,player2_marker,position)
       if win_check(the_board,player2_marker):
